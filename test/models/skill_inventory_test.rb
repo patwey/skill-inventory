@@ -1,13 +1,6 @@
 require_relative '../test_helper.rb'
 
 class SkillInventoryTest < Minitest::Test
-  def add_skill(num)
-    num.times do |i|
-      SkillInventory.add({:title       => "a title #{i + 1}",
-                          :description => "a description #{i + 1}"})
-    end
-  end
-
   def test_it_can_return_an_inventory_of_existing_skills
     skills = SkillInventory.all
     assert_equal [], skills
