@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'tilt/erb'
+require 'tilt/haml'
 
 DatabaseCleaner[:sequel, { :connection => Sequel.sqlite('db/skill_inventory_test.sqlite3')}].strategy = :truncation
 

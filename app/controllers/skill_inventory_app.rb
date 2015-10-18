@@ -8,7 +8,7 @@ class SkillInventoryApp < Sinatra::Base
 
   get '/skills' do
     @skills = SkillInventory.all
-    erb :index
+    haml :index
   end
 
   get '/skills/:id' do |id|
