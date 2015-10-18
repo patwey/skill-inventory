@@ -1,0 +1,17 @@
+<div id="skill-<%= @skill.id %>">
+  <div class='skill-title'>
+    <%= @skill.title %>
+  </div>
+
+  <div class='skill-description'>
+    <p>
+      <%= SkillPresenter.format(@skill.description) %>
+    </p>
+  </div>
+  <a href="/skills/<%= @skill.id %>/update">Update</a>
+  <form id="delete-skill-<%= @skill.id %>">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="submit" value="Delete" />
+  </form>
+  <a href="/skills">Return to Index</a>
+</div>
