@@ -15,6 +15,14 @@ class Minitest::Test
   def teardown
     DatabaseCleaner.clean
   end
+
+  # Helpers
+  def add_skill(num)
+    num.times do |i|
+      SkillInventory.add({:title       => "a title #{i + 1}",
+                          :description => "a description #{i + 1}"})
+    end
+  end
 end
 
 Capybara.app = SkillInventoryApp
