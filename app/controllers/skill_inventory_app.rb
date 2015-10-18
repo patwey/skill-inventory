@@ -3,7 +3,7 @@ class SkillInventoryApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
-    erb :dashboard
+    haml :dashboard
   end
 
   get '/skills' do
@@ -13,6 +13,6 @@ class SkillInventoryApp < Sinatra::Base
 
   get '/skills/:id' do |id|
     @skill = SkillInventory.find(id)
-    erb :show_skill
+    haml :show_skill
   end
 end

@@ -1,0 +1,9 @@
+%div{:id => "skill-#{@skill.id}"}
+  .skill-title= @skill.title
+  .skill-description
+    %p= SkillPresenter.format(@skill.description)
+  %a{:href => "/skills/#{@skill.id}/update"} Update
+  %form{:id => "delete-skill-#{@skill.id}"}
+    %input{:type => "hidden", :name => "_method", :value => "delete"}
+    %input{:type => "submit", :value => "Delete"}
+  %a{:href => "/skills"}Return to Index
