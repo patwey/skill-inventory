@@ -11,8 +11,12 @@ class SkillInventoryApp < Sinatra::Base
     haml :index
   end
 
+  get '/skills/add' do
+    haml :add
+  end
+
   get '/skills/:id' do |id|
     @skill = SkillInventory.find(id)
-    haml :show_skill
+    haml :show
   end
 end

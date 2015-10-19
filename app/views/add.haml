@@ -1,0 +1,10 @@
+%form.add-skill{:action => '/skills', :method => 'post'}
+  %label{:for => 'skill[title]'}Title
+  %input{:type => 'text', :name => 'skill[title]'}
+
+  %label{:for => 'skill[description]'}Description
+  %textarea{:name => 'skill[description]'}
+
+  %input{:type => 'submit', :value => 'Submit'}
+
+%a{:href => '/skills'}Return to Index
