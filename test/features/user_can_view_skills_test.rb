@@ -1,6 +1,18 @@
 require_relative '../test_helper'
 
 class ViewSkillsTest < FeatureTest
+  def test_user_can_navigate_from_homepage_to_the_index_page
+    # As a user, when I navigate to the homepage, and I click the Skill Index
+    # link, then I am brought to the skills index
+    visit '/'
+    assert_equal '/', current_path
+
+    assert has_link? 'Skill Index'
+    click_link 'Skill Index'
+
+    assert_equal '/skills', current_path
+  end
+
   def test_user_can_see_existing_skills_on_the_index_page
     # As a user, when I navigate to the skills index, and skills exist,
     # then I see a title link, update button and delete button for each
